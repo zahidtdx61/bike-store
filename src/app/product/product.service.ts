@@ -7,6 +7,12 @@ const createProduct = async (payload: IBike): Promise<IBike> => {
   return result
 }
 
+const getAllProduct = async (): Promise<IBike[]> => {
+  const result = await Bike.find()
+  return result
+}
+
 export const productService = {
   createProduct,
+  getAllProduct,
 }
