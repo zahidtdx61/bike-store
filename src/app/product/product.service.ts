@@ -22,9 +22,14 @@ const updateProduct = async (productId: string, productDetails: IBike): Promise<
   return result
 }
 
+const deleteProduct = async (productId : string) => {
+  await Bike.findByIdAndDelete(productId);
+}
+
 export const productService = {
   createProduct,
   getAllProduct,
   getProductById,
   updateProduct,
+  deleteProduct
 }
