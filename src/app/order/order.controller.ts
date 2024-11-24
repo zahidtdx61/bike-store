@@ -45,10 +45,10 @@ const generateRevenue = async (req: Request, res: Response) => {
     })
   } catch (error) {
     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
-      success: false,
-      message: 'Something went wrong',
-      error,
-      stack: error.stack,
+      status: false,
+      message: 'Something went wrong!',
+      error: (error as Error).message,
+      stack: (error as Error).stack,
     })
   }
 }
