@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "node ./dist/server.js",
+    "start:prod": "nodemon ./dist/server.js",
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc",
     "lint": "npx eslint src --ignore-pattern '.js,.ts'",
     "lint:fix": "npx eslint src --fix",
     "format": "npx prettier --ignore-path .prettierignore --write \"**/*.{js,ts,json}\"",
@@ -26,6 +29,9 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
-    "http-status-codes": "^2.3.0"
+    "http-status-codes": "^2.3.0",
+    "mongoose": "^8.8.2",
+    "nodemon": "^3.1.7",
+    "zod": "^3.23.8"
   }
 }
