@@ -47,8 +47,30 @@ const getAllProducts = async (req: Request, res: Response) => {
     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
       status: false,
       message: 'Something went wrong!',
-      error: error.message,
-      stack: error.stack,
+      error: (error as Error).message,
+      stack: (error as Error).stack,
+    })
+  }
+}
+
+const getProductById = async (req: Request, res: Response) => {
+  const { productId } = req.params
+
+  try {
+    const product = await productService.getProductById(productId)
+
+    res.status(StatusCodes.OK).json({
+      status: true,
+      message: 'Bike retrieved successfully',
+      data: product,
+    })
+  } catch (error: unknown) {
+    console.log(error)
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+      status: false,
+      message: 'Something went wrong!',
+      error: (error as Error).message,
+      stack: (error as Error).stack,
     })
   }
 }
@@ -56,4 +78,5 @@ const getAllProducts = async (req: Request, res: Response) => {
 export const productController = {
   createProduct,
   getAllProducts,
+  getProductById,
 }

@@ -12,7 +12,13 @@ const getAllProduct = async (): Promise<IBike[]> => {
   return result
 }
 
+const getProductById = async (productId : string): Promise<IBike | null> => {
+  const result = await Bike.findOne({_id: productId})
+  return result
+}
+
 export const productService = {
   createProduct,
   getAllProduct,
+  getProductById
 }
