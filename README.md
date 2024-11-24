@@ -4,6 +4,7 @@ Level 02 - Assignment 02
 This project is to create a backend API for a bike store.
 
 You can access the live version of the API at [Bike Store Backend](https://bike-store-backend-five.vercel.app/).
+
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fbike-store-backend-five.vercel.app%2F)](https://bike-store-backend-five.vercel.app/)
 
 ## Table of Contents
@@ -11,7 +12,6 @@ You can access the live version of the API at [Bike Store Backend](https://bike-
 - [Introduction](#introduction)
 - [Features](#features)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Contributing](#contributing)
 
 ## Introduction
@@ -60,14 +60,6 @@ DB_NAME=<any_name_of_your_choice>
 5. Start the development server:
 
 ```sh
-npm run dev
-```
-
-## Usage
-
-To start the project, run:
-
-```bash
 npm run dev
 ```
 
